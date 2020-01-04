@@ -5,4 +5,4 @@ router.get('/',(req,res)=>{
   res.json({time: Date().toString()})
 })
 
-module.export = router;
+module.exports = router;
