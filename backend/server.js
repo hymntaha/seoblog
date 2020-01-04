@@ -1,15 +1,26 @@
 const express = require('express')
 const morgan = require('morgan')
+var fs = require('fs')
+var path = require('path')
+
+
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const cors = require('cors');
-
+const mongoose = require('mongoose');
 require('dotenv').config()
 
 
-const app = express;
+var app = express()
 
-app.use(morgan('dev'));
+mongoose.connect(process.env.DATABASE, {
+  useNewUrlParser: true,
+}).then(() => console.log('DB connected'));
+
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+
+// setup the logger
+app.use(morgan('combined', { stream: accessLogStream }))
 app.use(bodyParser.json());
 app.use(cookieParser());
 
