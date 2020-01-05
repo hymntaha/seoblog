@@ -50,3 +50,5 @@ const userSchema = new mongoose.Schema({
     default:''
   }
 },{timestamp:true})
+
+model.exports = mongoose.model('User');
