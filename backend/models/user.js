@@ -49,4 +49,4 @@ const userSchema = new mongoose.Schema({
     data: String,
     default:''
   }
-})
+},{timestamp:true})
