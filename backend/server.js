@@ -10,6 +10,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config()
 const blogRoutes = require('./routes/blog');
+const authRoutes = require('./routes/auth');
 
 var app = express()
 
