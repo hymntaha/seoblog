@@ -73,6 +73,9 @@ userSchema.methods = {
     } catch (e){
       return '';
     }
+  },
+  makeSalt: function () {
+    
   }
   
 }
