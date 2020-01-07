@@ -66,6 +66,9 @@ userSchema
   });
 
 userSchema.methods = {
+  authenticate: function() {
+
+  },
   encryptPassword: function (password) {
     if(!password) return ''
     try {
