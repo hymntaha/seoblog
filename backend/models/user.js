@@ -51,4 +51,10 @@ const userSchema = new mongoose.Schema({
   }
 },{timestamp:true})
 
+userSchema.virtual('password').set(function(password){
+
+}).get()
+
+
+
 model.exports = mongoose.model('User', userSchema);
