@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import {useState} from 'react';
+
 import {
   Collapse,
   Navbar,
@@ -14,7 +15,7 @@ import {
   NavbarText
 } from 'reactstrap';
 
-const Example = (props) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -57,4 +58,4 @@ const Example = (props) => {
   );
 }
 
-export default Example;
+export default Header;
