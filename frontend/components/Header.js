@@ -24,15 +24,15 @@ const Header = () => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <Link href="/"><NavbarBrand>{APP_NAME}</NavbarBrand></Link>
+        <Link href="/"><NavLink className="font-weight-bold">{APP_NAME}</NavLink></Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <Link href='/signup'> <NavLink href="/components/">Signup</NavLink></Link>
+              <Link href='/signin'> <NavLink href="/components/">Signin</NavLink></Link>
             </NavItem>
             <NavItem>
-              <Link href='/signin'> <NavLink href="/components/">Signin</NavLink></Link>
+              <Link href='/signup'> <NavLink href="/components/">Signup</NavLink></Link>
             </NavItem>
           </Nav>
         </Collapse>
