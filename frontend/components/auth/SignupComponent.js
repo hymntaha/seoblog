@@ -1,6 +1,13 @@
 import React from 'react';
 
 const SignupComponent = () => {
+  const handleSubmit = (e)=> {
+    e.preventDefault();
+    console.log('handle submit')
+  }
+  const handleChange = (e)=> {
+   console.log(e.target.value)
+  }
   const signupForm = () => {
     return (
       <form onSubmit={handleSubmit}>
@@ -9,12 +16,9 @@ const SignupComponent = () => {
         </div>
       </form>
     )
-  }
-  return (
-    <div>
-      {signupForm()}
-    </div>
-  );
+  };
+
+  return <React.Fragment>{signupForm()}</React.Fragment>
 };
 
 export default SignupComponent;
