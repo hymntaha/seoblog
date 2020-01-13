@@ -13,13 +13,7 @@ const SignupComponent = () => {
     showForm:true
   });
 
-  const { name: '',
-    email: '',
-    password: '',
-    error: '',
-    loading: false,
-    message:'',
-    showForm:true} from values;
+  const { name, email, password ,error, loading, message, showForm} = values;
 
   const handleSubmit = (e)=> {
     e.preventDefault();
