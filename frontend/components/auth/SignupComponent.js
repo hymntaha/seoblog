@@ -1,6 +1,26 @@
 import React from 'react';
 
+const {useState} from 'react';
+
 const SignupComponent = () => {
+  const [values, setValues] = useState({
+    name: '',
+    email: '',
+    password: '',
+    error: '',
+    loading: false,
+    message:'',
+    showForm:true
+  });
+
+  const { name: '',
+    email: '',
+    password: '',
+    error: '',
+    loading: false,
+    message:'',
+    showForm:true} from values;
+
   const handleSubmit = (e)=> {
     e.preventDefault();
     console.log('handle submit')
@@ -20,6 +40,9 @@ const SignupComponent = () => {
         <div className="form-group">
           <input onChange={handleChange} type="password" className="form-control" placeholder="Enter your password" />
         </div>
+        <button className="btn btn-primary">
+          Signup
+        </button>
       </form>
     )
   };
