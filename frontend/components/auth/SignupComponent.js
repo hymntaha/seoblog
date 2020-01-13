@@ -17,7 +17,7 @@ const SignupComponent = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("handle submit");
+    console.table({ name, email, password, error, loading, message, showForm });
   };
   const handleChange = e => {
     setValues({ ...values, error: false, [name]: e.target.value });
