@@ -26,3 +26,19 @@ export const signin = (user)=>{
     return response.json()
   }).catch(err=> console.log(err))
 }
+
+export const setCookie = (key, value) =>{
+  if (process.browser) {
+    cookie.set(key,value,{
+      expires: 1
+    })
+  }
+}
+
+export const removeCookie = (key) => {
+  if (process.browser) {
+    cookie.remove(key,{
+      expires: 1
+    })
+  }
+}
