@@ -1,4 +1,5 @@
 import React from "react";
+import Router from 'next/router';
 
 import { useState } from "react";
 import { signin } from "../../actions/auth";
@@ -24,16 +25,7 @@ const SigninCompnent = () => {
       if (data.error) {
         setValues({ ...values, error: data.error, loading: false });
       } else {
-        setValues({
-          ...values,
-          name: "",
-          password: "",
-          email: "",
-          error: "",
-          loading: false,
-          message: data.message,
-          showForm: false
-        });
+        Router.push(`/`);
       }
     });
   };
