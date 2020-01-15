@@ -1,11 +1,10 @@
 import React from "react";
 
 import { useState } from "react";
-import { signup } from "../../actions/auth";
+import { signin } from "../../actions/auth";
 
 const SigninCompnent = () => {
   const [values, setValues] = useState({
-    name: "",
     email: "",
     password: "",
     error: "",
@@ -14,14 +13,14 @@ const SigninCompnent = () => {
     showForm: true
   });
 
-  const { name, email, password, error, loading, message, showForm } = values;
+  const { email, password, error, loading, message, showForm } = values;
 
   const handleSubmit = e => {
     e.preventDefault();
     setValues({ ...values, loading: true, error: false });
     const user = { name, email, password };
 
-    signup(user).then(data => {
+    signin(user).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error, loading: false });
       } else {
@@ -48,17 +47,10 @@ const SigninCompnent = () => {
     error ? <div className="aler alert-info">{error}</div> : "";
   const showMessage = () =>
     message ? <div className="aler alert-info">{message}</div> : "";
-  const signupForm = () => {
+  const signinForm = () => {
     return (
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <input
-            value={name}
-            onChange={handleChange("name")}
-            type="text"
-            className="form-control"
-            placeholder="Enter your name"
-          />
         </div>
         <div className="form-group">
           <input
@@ -88,7 +80,7 @@ const SigninCompnent = () => {
       {showError()}
       {showLoading()}
       {showMessage()}
-      {showForm && signupForm()}
+      {showForm && signinForm()}
     </React.Fragment>
   );
 };
