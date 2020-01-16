@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import {API} from '../config';
+import cookie from 'js-cookie';
 
 export const signup = (user)=>{
   return fetch(`${API}/signup`,{
@@ -46,5 +47,17 @@ export const removeCookie = (key) => {
 export const getCookie = key => {
   if (process.browser) {
     cookie.get(key)
+  }
+}
+
+export const setLocalStorage = (key,value)=>{
+  if(process.browser){
+    localStorage.setItem(key, JSON.stringify(value))
+  }
+}
+
+export const removeLocalStorage = (key,value)=>{
+  if(process.browser){
+    localStorage.removeItem(key)
   }
 }
