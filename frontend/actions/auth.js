@@ -67,3 +67,16 @@ export const authenticate = (data,next)=>{
   setLocalStorage('user', data.user)
   next();
 }
+
+export const isAuth = () =>{
+  if (process.browser) {
+    const cookieChecked = getCookie('token')
+    if (cookieChecked) {
+      if (localStorage.getItem('user')) {
+        return JSON.parse(localStorage.getItem('user'));
+      } else {
+
+      }
+    }
+  }
+}
