@@ -12,6 +12,7 @@ router.post("/signup", userSignupValidation, runValidation, signup);
 router.post("/signin", userSigninValidation, runValidation, signin);
 router.get("/signout", signout);
 
+router.get('/')
 
 
 module.exports = router;
