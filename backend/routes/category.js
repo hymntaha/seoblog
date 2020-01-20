@@ -15,4 +15,8 @@ router.post(
   create
 );
 
+router.get('categories',list)
+router.get('category/:slug',read)
+router.delete('categories/:slug',requireSignin, adminMiddleware, remove)
+
 module.exports = router;
