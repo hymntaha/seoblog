@@ -41,3 +41,15 @@ exports.read = (req,res) => {
     res.json(category)
   })
 }
+
+exports.remove = (req,res) => {
+  const slug = req.params.slug.toLowerCase()
+  Category.findOneandRemove({slug}).exec((err,data)=>{
+    if(err){
+      return res.status(400).json({
+        error: errorHandler(err)
+      })
+    }
+    res.json(data)
+  })
+}
