@@ -29,3 +29,15 @@ exports.list = (req,res) => {
     res.json(data)
   })
 }
+
+exports.read = (req,res) => {
+  const slug = req.params.slug.toLowerCase()
+  Category.findOne({slug}).exec((err,category)=>{
+    if(err){
+      return res.status(400).json({
+        error: errorHandler(err)
+      })
+    }
+    res.json(category)
+  })
+}
