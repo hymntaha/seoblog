@@ -20,7 +20,7 @@ exports.create = (req,res) => {
 }
 
 exports.list = (req,res) => {
-  Category.find({}).exec((err,data)=>{
+  Tag.find({}).exec((err,data)=>{
     if(err){
       return res.status(400).json({
         error: errorHandler(err)
@@ -32,19 +32,19 @@ exports.list = (req,res) => {
 
 exports.read = (req,res) => {
   const slug = req.params.slug.toLowerCase()
-  Category.findOne({slug}).exec((err,category)=>{
+  Tag.findOne({slug}).exec((err,tag)=>{
     if(err){
       return res.status(400).json({
         error: errorHandler(err)
       })
     }
-    res.json(category)
+    res.json(tag)
   })
 }
 
 exports.remove = (req,res) => {
   const slug = req.params.slug.toLowerCase()
-  Category.findOneandRemove({slug}).exec((err,data)=>{
+  Tag.findOneandRemove({slug}).exec((err,data)=>{
     if(err){
       return res.status(400).json({
         error: errorHandler(err)
