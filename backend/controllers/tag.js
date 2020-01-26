@@ -50,6 +50,8 @@ exports.remove = (req,res) => {
         error: errorHandler(err)
       })
     }
-    res.json(data)
+    res.json({
+      message: "Tag deleted success"
+    })
   })
 }
