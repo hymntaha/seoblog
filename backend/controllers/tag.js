@@ -35,7 +35,7 @@ exports.read = (req,res) => {
   Tag.findOne({slug}).exec((err,tag)=>{
     if(err){
       return res.status(400).json({
-        error: errorHandler(err)
+        error: 'Tag not found'
       })
     }
     res.json(tag)
