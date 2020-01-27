@@ -51,7 +51,7 @@ exports.remove = (req,res) => {
       })
     }
     res.json({
-      message: "Tag deleted success"
+      message: "Tag deleted successfully"
     })
   })
 }
