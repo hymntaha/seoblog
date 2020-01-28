@@ -1,7 +1,7 @@
-import Layout from "../../components/Layout";
-import Admin from "../../components/auth/Admin";
+import Layout from "../../../components/Layout";
+import Admin from "../../../components/auth/Admin";
 
-const AdminIndex = () => {
+const CategoryTag = () => {
   return (
     <Layout>
       <Admin>
@@ -25,4 +25,4 @@ const AdminIndex = () => {
   );
 };
 
-export default AdminIndex;
+export default CategoryTag;
